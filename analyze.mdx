@@ -1,6 +1,6 @@
 ---
 title: 'Analyze Risk Endpoint'
-api: 'POST [https://api.mindcare.agency/analyze](https://api.mindcare.agency/analyze)'
+api: 'POST /analyze'
 description: 'Submit a crypto pair to receive an aggregated institutional risk audit and execution verdict.'
 ---
 
@@ -10,12 +10,11 @@ This endpoint uses the `x402` machine-to-machine protocol. **No traditional API 
 
 ---
 
-## Request Body
-
-**`pair`** (string, required)  
-The trading pair you want the Oracle to analyze. Must be a valid perpetual futures ticker supported by both Binance and Bybit. 
-
-*Example: BTCUSDT or ETHUSDT*
+<ParamField body="pair" type="string" required>
+  The trading pair you want the Oracle to analyze. Must be a valid perpetual futures ticker supported by both Binance and Bybit. 
+  
+  Example: BTCUSDT or ETHUSDT
+</ParamField>
 
 ---
 
