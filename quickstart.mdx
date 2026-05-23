@@ -49,3 +49,30 @@ try:
 
 except Exception as e:
     print(f"Handshake Error: {str(e)}")
+```
+
+## Expected Response
+
+Upon successful payment, the Oracle node will return the aggregated execution verdict, including cryptographic proof of the audit.
+
+```json
+{
+  "service": "Mindcare_Oracle",
+  "target_pair": "BTCUSDT",
+  "timestamp": "2026-05-23T12:00:00Z",
+  "kci_compliance": {
+    "KCI_01_Funding": "PASS",
+    "KCI_02_Volatility": "PASS",
+    "KCI_03_Volume": "PASS",
+    "KCI_04_Liquidity_Wall": "PASS"
+  },
+  "obi_score": 0.12,
+  "execution_verdict": "APPROVED",
+  "actionable_advice": "Audit complete for BTCUSDT (Tier-1 Major Asset). OBI: 0.12 (Balanced).",
+  "proof": {
+    "signature": "0xabc123...",
+    "node_address": "0x6dBD750fC5965f9299Bf9671b121a11ADAB89277",
+    "algorithm": "ECDSA_secp256k1"
+  }
+}
+```
