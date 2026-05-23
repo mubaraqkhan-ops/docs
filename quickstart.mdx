@@ -31,14 +31,14 @@ bot_account = Account.from_key(bot_pk)
 
 # 2. Configure the x402 Client
 facilitator = HTTPFacilitatorClient(
-    FacilitatorConfig(url="[https://api.cdp.coinbase.com/platform/v2/x402/](https://api.cdp.coinbase.com/platform/v2/x402/)")
+    FacilitatorConfig(url="https://api.cdp.coinbase.com/platform/v2/x402/")
 )
 client = x402HttpClient(signer=bot_pk, facilitator=facilitator)
 
 # 3. Fire the Request (Handles the 402 Handshake Automatically)
 try:
     response = client.post(
-        "[https://api.mindcare.agency/analyze](https://api.mindcare.agency/analyze)",
+        "https://api.mindcare.agency/analyze",
         json={"pair": "BTCUSDT"},
         timeout=15.0
     )
