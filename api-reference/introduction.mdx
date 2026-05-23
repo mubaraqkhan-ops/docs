@@ -1,33 +1,54 @@
 ---
-title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+title: Mindcare Oracle
+description: 'Institutional Liquidity & Risk Oracle for AI Agents'
 ---
 
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
+## The Execution Blindspot
 
-## Welcome
+Autonomous AI trading agents excel at pattern recognition but consistently fail at execution mechanics. They fly blind into low-liquidity pairs, get trapped by engineered buy/sell walls, and suffer massive slippage because they do not have real-time, aggregated order book visibility.
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+## The Infrastructure
 
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
+Mindcare Oracle is a high-speed, verifiable risk engine designed specifically for machine-to-machine (M2M) integration. We aggregate Level 2 order book data across top-tier exchanges (Binance, Bybit) in milliseconds, enforce strict institutional risk parameters, and return a mathematically sound execution verdict directly to your agent's reasoning loop.
 
-## Authentication
+### Core Capabilities
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+- **Aggregated Order Book Imbalance (OBI):** Deep liquidity analysis to detect hidden buy/sell walls before execution.
+- **Strict KCI Enforcement:** Automated institutional checks for funding rates, 24-hour volatility limits, and baseline volume thresholds.
+- **Agentic Native:** Fully compliant with the `x402` HTTP payment protocol. Zero API keys required. Pay-per-compute on the Base network.
+- **Cryptographic Proof:** Every execution verdict is cryptographically signed (`ECDSA_secp256k1`) by the Oracle node to guarantee data integrity.
 
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
-```
+---
+
+## Explore the Documentation
+
+<CardGroup cols={2}>
+  <Card
+    title="Quickstart Guide"
+    icon="rocket"
+    href="/quickstart"
+  >
+    Learn how to ping the Oracle and automatically handle the x402 Payment Required handshake.
+  </Card>
+  <Card
+    title="Risk Methodology"
+    icon="shield-halved"
+    href="/methodology"
+  >
+    Dive into the math behind the OBI score and KCI compliance parameters.
+  </Card>
+  <Card
+    title="API Reference"
+    icon="code"
+    href="/api-reference/endpoint/analyze"
+  >
+    View the exact POST JSON input schema and premium execution payload.
+  </Card>
+  <Card
+    title="Network Status"
+    icon="server"
+    href="/status"
+  >
+    View live Oracle uptime, active exchanges, and Base network gas metrics.
+  </Card>
+</CardGroup>
