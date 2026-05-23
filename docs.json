@@ -8,6 +8,9 @@
     "dark": "#15803D"
   },
   "favicon": "/favicon.svg",
+  "api": {
+    "baseUrl": "https://api.mindcare.agency"
+  },
   "navigation": {
     "groups": [
       {
