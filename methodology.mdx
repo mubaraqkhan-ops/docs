@@ -1,0 +1,41 @@
+---
+title: 'Risk Methodology'
+description: 'The mathematical framework driving the Oracle execution verdicts.'
+---
+
+## Order Book Imbalance (OBI)
+
+The core of the Mindcare Oracle's liquidity analysis is the Order Book Imbalance (OBI) score. Rather than relying on simple spread data, we pull Level 2 depth arrays from Binance and Bybit, calculating the ratio of buying pressure versus selling pressure within 20 ticks of the current mark price.
+
+The formula is calculated as:
+
+$$
+OBI = \frac{Total Bids - Total Asks}{Total Bids + Total Asks}
+$$
+
+### Interpreting the Score
+The OBI score strictly bounds between `-1.0` and `+1.0`.
+* **Positive Score (> 0.3):** Indicates a heavy Buy Wall. Severe risk of upward slippage for large market buys.
+* **Negative Score (< -0.3):** Indicates a heavy Sell Wall. Severe risk of downward slippage for large market sells.
+* **Balanced (-0.3 to 0.3):** Optimal liquidity conditions for autonomous execution.
+
+---
+
+## Key Control Indicators (KCIs)
+
+Before any execution verdict is returned, the target asset must pass four strict institutional IT Risk parameters. If a single KCI fails, the Oracle returns a `BLOCKED` verdict. 
+
+Because risk tolerance scales with market size, the Oracle dynamically assigns the asset to one of three Tiers based on aggregated 24-hour volume, adjusting the failure thresholds accordingly.
+
+| Metric | Tier 1 (> $150M) | Tier 2 (> $30M) | Tier 3 (< $30M) |
+| :--- | :--- | :--- | :--- |
+| **Max Funding Rate** | 0.05% | 0.12% | 0.25% |
+| **Max 24h Volatility** | 5.0% | 12.0% | 25.0% |
+| **OBI Limit** | ± 0.6 | ± 0.5 | ± 0.4 |
+
+### KCI Definitions
+
+1. **Funding Rate (KCI_01):** Protects agents from executing trades in heavily skewed perpetual futures markets where they will bleed capital to funding fees.
+2. **Volatility (KCI_02):** Blocks execution during extreme price discovery phases or flash crashes.
+3. **Volume Baseline (KCI_03):** Ensures absolute minimum liquidity exists to prevent the agent from being trapped in a dead pair.
+4. **Liquidity Wall (KCI_04):** Enforces the maximum allowable OBI score to prevent execution into manufactured spoofing walls.
