@@ -1,0 +1,51 @@
+---
+title: 'Analyze Risk Endpoint'
+api: 'POST https://api.mindcare.agency/analyze'
+description: 'Submit a crypto pair to receive an aggregated institutional risk audit and execution verdict.'
+---
+
+## Authentication
+
+This endpoint uses the `x402` machine-to-machine protocol. **No traditional API keys are required.** Every initial request will return a `402 Payment Required` status. Your client must parse the invoice in the headers, execute the $0.05 payment on the Base network, and automatically resubmit the request with the transaction receipt.
+
+---
+
+## Request Body
+
+<ParamField body="pair" type="string" required>
+  The trading pair you want the Oracle to analyze. Must be a valid perpetual futures ticker supported by both Binance and Bybit. 
+  
+  *Example: `BTCUSDT` or `ETHUSDT`*
+</ParamField>
+
+---
+
+## Response
+
+Upon successful payment validation, the Oracle returns a `200 OK` status containing the premium execution data, aggregated metrics, and cryptographic proof of the audit.
+
+<ResponseExample>
+```json 200 OK
+{
+  "service": "Mindcare_Oracle",
+  "target_pair": "BTCUSDT",
+  "timestamp": "2026-05-23T12:00:00Z",
+  "kci_compliance": {
+    "KCI_01_Funding": "PASS",
+    "KCI_02_Volatility": "PASS",
+    "KCI_03_Volume": "PASS",
+    "KCI_04_Liquidity_Wall": "PASS"
+  },
+  "obi_score": 0.12,
+  "exchanges_aggregated": [
+    "Binance",
+    "Bybit"
+  ],
+  "execution_verdict": "APPROVED",
+  "actionable_advice": "Audit complete for BTCUSDT (Tier-1 Major Asset). OBI: 0.12 (Balanced).",
+  "proof": {
+    "signature": "0xabc123...",
+    "node_address": "0x6dBD750fC5965f9299Bf9671b121a11ADAB89277",
+    "algorithm": "ECDSA_secp256k1"
+  }
+}
