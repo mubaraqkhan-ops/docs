@@ -1,6 +1,6 @@
 ---
 title: 'Analyze Risk Endpoint'
-api: 'POST https://api.mindcare.agency/analyze'
+api: 'POST [https://api.mindcare.agency/analyze](https://api.mindcare.agency/analyze)'
 description: 'Submit a crypto pair to receive an aggregated institutional risk audit and execution verdict.'
 ---
 
@@ -25,7 +25,8 @@ This endpoint uses the `x402` machine-to-machine protocol. **No traditional API 
 Upon successful payment validation, the Oracle returns a `200 OK` status containing the premium execution data, aggregated metrics, and cryptographic proof of the audit.
 
 <ResponseExample>
-```json 200 OK
+
+```json
 {
   "service": "Mindcare_Oracle",
   "target_pair": "BTCUSDT",
