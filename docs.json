@@ -17,6 +17,12 @@
           "quickstart",
           "methodology"
         ]
+      },
+      {
+        "group": "API Reference",
+        "pages": [
+          "analyze"
+        ]
       }
     ]
   }
