@@ -1,133 +1,54 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentation"
-icon: 'star'
+title: Mindcare Oracle
+description: 'Institutional Liquidity & Risk Oracle for AI Agents'
 ---
 
-## Setting up
+## The Execution Blindspot
 
-Get your documentation site up and running in minutes.
+Autonomous AI trading agents excel at pattern recognition but consistently fail at execution mechanics. They fly blind into low-liquidity pairs, get trapped by engineered buy/sell walls, and suffer massive slippage because they do not have real-time, aggregated order book visibility.
 
-<Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
->
-  Follow our three step quickstart guide.
-</Card>
+## The Infrastructure
 
-## Make it yours
+Mindcare Oracle is a high-speed, verifiable risk engine designed specifically for machine-to-machine (M2M) integration. We aggregate Level 2 order book data across top-tier exchanges (Binance, Bybit) in milliseconds, enforce strict institutional risk parameters, and return a mathematically sound execution verdict directly to your agent's reasoning loop.
 
-Design a docs site that looks great and empowers your users.
+### Core Capabilities
 
-<Columns cols={2}>
+- **Aggregated Order Book Imbalance (OBI):** Deep liquidity analysis to detect hidden buy/sell walls before execution.
+- **Strict KCI Enforcement:** Automated institutional checks for funding rates, 24-hour volatility limits, and baseline volume thresholds.
+- **Agentic Native:** Fully compliant with the `x402` HTTP payment protocol. Zero API keys required. Pay-per-compute on the Base network.
+- **Cryptographic Proof:** Every execution verdict is cryptographically signed (`ECDSA_secp256k1`) by the Oracle node to guarantee data integrity.
+
+---
+
+## Explore the Documentation
+
+<CardGroup cols={2}>
   <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
+    title="Quickstart Guide"
+    icon="rocket"
+    href="/quickstart"
   >
-    Edit your docs locally and preview them in real time.
+    Learn how to ping the Oracle and automatically handle the x402 Payment Required handshake.
   </Card>
   <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
+    title="Risk Methodology"
+    icon="shield-halved"
+    href="/methodology"
   >
-    Customize the design and colors of your site to match your brand.
-  </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
+    Dive into the math behind the OBI score and KCI compliance parameters.
   </Card>
   <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
-  >
-    Auto-generate API documentation from OpenAPI specifications.
-  </Card>
-</Columns>
-
-## Create beautiful pages
-
-Everything you need to create world-class documentation.
-
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
-  </Card>
-  <Card
-    title="Code samples"
+    title="API Reference"
     icon="code"
-    href="/essentials/code"
+    href="/api-reference/endpoint/analyze"
   >
-    Add sample code to demonstrate how to use your product.
+    View the exact POST JSON input schema and premium execution payload.
   </Card>
   <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
+    title="Network Status"
+    icon="server"
+    href="/status"
   >
-    Display images and other media.
+    View live Oracle uptime, active exchanges, and Base network gas metrics.
   </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
-
-## Make your content agent ready
-
-Make your docs work for humans and AI agents alike.
-
-<Columns cols={2}>
-  <Card
-    title="Prompt component"
-    icon="robot"
-    href="/agent-ready/prompt"
-  >
-    Embed shareable AI prompts readers can copy or open in Cursor.
-  </Card>
-  <Card
-    title="Visibility"
-    icon="eye"
-    href="/agent-ready/visibility"
-  >
-    Show different content to humans and agents reading your docs.
-  </Card>
-  <Card
-    title="Contextual menu"
-    icon="bolt"
-    href="/agent-ready/contextual"
-  >
-    Give readers one-click access to Claude, ChatGPT, Cursor, and more.
-  </Card>
-  <Card
-    title="AI coding tools"
-    icon="wand-magic-sparkles"
-    href="/ai-tools/claude-code"
-  >
-    Set up Claude Code, Cursor, or Windsurf with Mintlify's skill.
-  </Card>
-</Columns>
-
-## Need inspiration?
-
-<Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
->
-  Browse our showcase of exceptional documentation sites.
-</Card>
+</CardGroup>
