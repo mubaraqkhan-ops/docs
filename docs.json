@@ -13,13 +13,9 @@
       {
         "group": "Getting Started",
         "pages": [
-          "api-reference/introduction"
+          "introduction"
         ]
       }
     ]
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
   }
 }
