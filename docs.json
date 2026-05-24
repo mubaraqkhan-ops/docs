@@ -9,7 +9,12 @@
   },
   "favicon": "/favicon.svg",
   "api": {
-    "baseUrl": "https://api.mindcare.agency"
+    "mdx": {
+      "server": "https://api.mindcare.agency"
+    },
+    "playground": {
+      "display": "none"
+    }
   },
   "navigation": {
     "groups": [
